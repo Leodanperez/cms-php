@@ -110,8 +110,20 @@ class UserController
                       "perfil"=> $_POST["newPerfil"],
                       "ruta"=> $ruta);
 
-        $resp = UserModel::createUser($tabla, $datos);                      
-
+        $resp = UserModel::createUser($tabla, $datos);   
+        
+        if ($resp == "ok") {
+          echo "<script>
+                Swal.fire({
+                  icon: 'success',
+                  title: 'El usuario se creo correctamente!'
+                  }).then((result) => {
+                  if (result.value) {
+                    window.location = 'users';
+                  }
+                })
+              </script>";          
+        }
       }
     }
   }
