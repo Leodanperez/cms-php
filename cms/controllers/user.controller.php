@@ -117,7 +117,7 @@ class UserController
                 Swal.fire({
                   icon: 'success',
                   title: 'El usuario se creo correctamente!'
-                  }).then((result) => {
+                }).then((result) => {
                   if (result.value) {
                     window.location = 'users';
                   }

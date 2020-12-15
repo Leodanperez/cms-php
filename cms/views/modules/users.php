@@ -49,9 +49,13 @@
                   foreach ($user as $key => $value) {
                     echo '<tr>
                           <td>'.$key.'</td>
-                          <td>
-                            <img src="" class="img-fluid">
-                          </td>
+                          <td class="text-center">';
+                          if ($value["foto"] != "") {
+                            echo '<img src="'.$value["foto"].'" class="img-fluid" width="50px">';
+                          } else {
+                            echo '<img src="https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg" class="img-fluid" width="50px">';
+                          }                            
+                          echo '</td>
                           <td>'.$value["nombre"].'</td>
                           <td>'.$value["usuario"].'</td>
                           <td>'.$value["perfil"].'</td>';
